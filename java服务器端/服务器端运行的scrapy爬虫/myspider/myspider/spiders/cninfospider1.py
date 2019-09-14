@@ -118,11 +118,11 @@ class Cninfospider1Spider(scrapy.Spider):
                     print (e.__traceback__)
                     continue
                 else:
-                    if current_time > Cninfospider1Spider.post:
+                    if current_time >= Cninfospider1Spider.post:
                         pass
 
                     else:
-                        if current_time <= Cninfospider1Spider.pre:
+                        if current_time < Cninfospider1Spider.pre:
                             index = Cninfospider1Spider.company_list.index(company)
                             #及时更新应爬取的page的范围给parse0知道,不要再多爬了
                             #加锁，只允许第一个达到这个page的进入修改Cninfospider1Spider.time_limit_list[index]

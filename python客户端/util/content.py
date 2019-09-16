@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 class content:
 
     _NULL_STR = ''

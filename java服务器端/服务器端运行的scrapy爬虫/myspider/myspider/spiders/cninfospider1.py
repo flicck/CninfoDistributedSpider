@@ -10,7 +10,8 @@ import datetime
 import copy
 class Company_List:
     #这里需要放公司文件的绝对路径
-    f = open("C:/Users/stawind/Desktop/list/WaitSearchCompanyList.txt", "r", encoding='UTF-8')
+    # f = open("C:/Users/stawind/Desktop/list/WaitSearchCompanyList.txt", "r", encoding='UTF-8')
+    f = open("/tmp/scrapyApp/WaitSearchCompanyList.txt", "r", encoding='UTF-8')
     def get_company_list(self):
         companyList=[]
         while True:

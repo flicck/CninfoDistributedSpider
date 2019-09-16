@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
+import threading, time,random
+
+from util.log_util import LogUtil
+import json
+import urllib
+from urllib import request
+import requests
+import os
 
 
 count = 0
-data_out_dir = "C:/Users/stawind/Desktop/data_out"
+data_out_dir = "/tmp/data_out"
+# data_out_dir = "C:/Users/stawind/Desktop/data_out"
 #设置请求头
 opener = urllib.request.build_opener()
 opener.addheaders = [('User-Agent',
@@ -14,6 +24,8 @@ class Consumer(threading.Thread):
         """
         :param queue:           队列对象, 这个要和生产线程用同一个
         :param name:            队列名称
+        :param max_sleep_time:  消费一次的最大间隔时间
+        :param max_retry_num:   消费失败重试次数
         :return:
         """
         super(self.__class__, self).__init__()

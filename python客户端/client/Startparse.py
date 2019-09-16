@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+import sys
+sys.path.append(r'/tmp/pythonClient/python_client/')
 import six
 import Msg_pb2
 import socket
@@ -9,7 +12,8 @@ import threading
 import action.consumer as consumer
 from multiprocessing import Process
 # from action.consumer import Consumer
-address = ('127.0.0.1',8765)
+# address = ('127.0.0.1',8765)
+address = ('192.168.134.20',8765)
 s = socket.socket()
 s.connect(address)
 q = queue.Queue()
